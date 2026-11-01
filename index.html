@@ -7,7 +7,7 @@
   <meta name="description" content="Offizielle Website von rauschwerk – Peak Time Techno, Minimal Techno, Experimental Industrial Techno & Extended Club Mixes.">
   <link rel="icon" type="image/svg+xml" href="assets/rauschwerk-logo-round.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -30,13 +30,19 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    body {
+    /* Custom Cyber Techno Cursors (Schwarz & Neon-Orange) */
+    html, body {
       background-color: var(--bg);
       color: var(--text);
       font-family: 'Space Grotesk', -apple-system, sans-serif;
       line-height: 1.5;
       letter-spacing: -0.01em;
       padding-bottom: 80px;
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpolygon points='2,2 2,20 7,15 11,23 14,21 10,13 17,13' fill='%23050505' stroke='%23ff5500' stroke-width='1.8' stroke-linejoin='round'/%3E%3C/svg%3E"), auto;
+    }
+
+    a, button, [role='button'], input, select, textarea, .release-card, .stream-card, .featured-cover, .progress-rail, .play-btn-circle {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ff5500'/%3E%3Ccircle cx='12' cy='12' r='8' fill='none' stroke='%23050505' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='9.5' fill='none' stroke='%23ff5500' stroke-width='1.5'/%3E%3C/svg%3E") 12 12, pointer !important;
     }
 
     a {
@@ -167,7 +173,6 @@
       text-transform: uppercase;
       border-radius: 4px;
       transition: var(--transition);
-      cursor: pointer;
     }
 
     .btn-primary {
@@ -240,7 +245,6 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
       border-radius: 2px;
-      cursor: pointer;
       font-family: inherit;
       transition: var(--transition);
     }
@@ -269,7 +273,6 @@
       border-radius: 4px;
       overflow: hidden;
       transition: var(--transition);
-      cursor: pointer;
       display: flex;
       flex-direction: column;
     }
@@ -426,7 +429,7 @@
       transform: translate(2px, -2px);
     }
 
-    /* Featured Release Minimal */
+    /* Featured Release */
     .featured-release-card {
       background: var(--bg-surface);
       border: 1px solid var(--border);
@@ -452,7 +455,6 @@
       background: #111;
       border-radius: 2px;
       overflow: hidden;
-      cursor: pointer;
       border: 1px solid var(--border);
     }
 
@@ -617,7 +619,7 @@
       display: block;
     }
 
-    /* Minimal Contact Form */
+    /* Contact Form */
     .contact-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -691,7 +693,7 @@
       resize: vertical;
     }
 
-    /* Fixed Minimal Player Bar */
+    /* Fixed Sticky Player */
     .player-bar {
       position: fixed;
       bottom: 0;
@@ -752,7 +754,6 @@
       background: none;
       border: none;
       color: var(--text-muted);
-      cursor: pointer;
       display: flex;
       align-items: center;
       transition: var(--transition);
@@ -790,7 +791,6 @@
       flex-grow: 1;
       height: 3px;
       background: var(--border);
-      cursor: pointer;
       position: relative;
     }
 
@@ -830,7 +830,6 @@
     }
 
     .footer-links a {
-      cursor: pointer;
       transition: var(--transition);
     }
 
@@ -838,7 +837,7 @@
       color: var(--accent);
     }
 
-    /* Modal */
+    /* Legal Modal */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -875,7 +874,6 @@
       border: none;
       color: var(--text-muted);
       font-size: 1.25rem;
-      cursor: pointer;
     }
 
     .modal-box h3 {
