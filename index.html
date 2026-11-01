@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>rauschwerk | Minimal & Peak Time Techno</title>
-  <meta name="description" content="Offizielle Website von rauschwerk – Minimal Techno, Peak Time & Extended Club Mixes.">
+  <title>rauschwerk | Peak Time, Minimal & Experimental Industrial Techno</title>
+  <meta name="description" content="Offizielle Website von rauschwerk – Peak Time Techno, Minimal Techno, Experimental Industrial Techno & Extended Club Mixes.">
+  <link rel="icon" type="image/svg+xml" href="assets/rauschwerk-logo-round.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -68,25 +69,13 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      font-weight: 700;
-      font-size: 1.05rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
     }
 
     .brand img {
-      height: 26px;
+      height: 32px;
       width: auto;
       display: block;
-    }
-
-    .brand span {
-      color: var(--text);
-    }
-
-    .brand span b {
-      color: var(--accent);
-      font-weight: 700;
+      filter: drop-shadow(0 0 10px rgba(255, 85, 0, 0.25));
     }
 
     .nav-links {
@@ -112,7 +101,7 @@
       color: var(--text);
     }
 
-    /* Hero Section - Super Minimal & Bold */
+    /* Hero Section */
     .hero {
       padding: 8rem 1.5rem 4rem;
       max-width: 1200px;
@@ -382,6 +371,171 @@
       font-size: 0.75rem;
       color: var(--text-muted);
       border-top: 1px solid var(--border);
+    }
+
+    /* Stream Grid */
+    .stream-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .stream-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .stream-card:hover {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+      transform: translateY(-2px);
+    }
+
+    .stream-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .stream-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .stream-arrow {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      transition: var(--transition);
+    }
+
+    .stream-card:hover .stream-arrow {
+      color: var(--accent);
+      transform: translate(2px, -2px);
+    }
+
+    /* Featured Release Minimal */
+    .featured-release-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 2.5rem;
+      padding: 2rem;
+      align-items: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-release-card:hover {
+      border-color: var(--accent);
+    }
+
+    .featured-cover {
+      position: relative;
+      aspect-ratio: 1;
+      width: 100%;
+      background: #111;
+      border-radius: 2px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid var(--border);
+    }
+
+    .featured-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .featured-cover:hover img {
+      transform: scale(1.03);
+    }
+
+    .featured-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .featured-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .featured-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .featured-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 600px;
+    }
+
+    .featured-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding: 1rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 0.5rem 0;
+    }
+
+    .featured-meta-grid span {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .featured-meta-grid strong {
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    .featured-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 860px) {
+      .featured-release-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+      .featured-meta-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
     }
 
     /* About Minimal */
@@ -746,171 +900,6 @@
         display: none;
       }
     }
-
-    /* Stream Grid Minimal */
-    .stream-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-
-    .stream-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      padding: 1.25rem 1.5rem;
-      border-radius: 4px;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      transition: var(--transition);
-    }
-
-    .stream-card:hover {
-      border-color: var(--accent);
-      background: var(--accent-dim);
-      transform: translateY(-2px);
-    }
-
-    .stream-name {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.25rem;
-      letter-spacing: -0.01em;
-    }
-
-    .stream-sub {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .stream-arrow {
-      position: absolute;
-      top: 1.25rem;
-      right: 1.25rem;
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      transition: var(--transition);
-    }
-
-    .stream-card:hover .stream-arrow {
-      color: var(--accent);
-      transform: translate(2px, -2px);
-    }
-
-    /* Featured Release Minimal */
-    .featured-release-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      display: grid;
-      grid-template-columns: 360px 1fr;
-      gap: 2.5rem;
-      padding: 2rem;
-      align-items: center;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .featured-release-card:hover {
-      border-color: var(--accent);
-    }
-
-    .featured-cover {
-      position: relative;
-      aspect-ratio: 1;
-      width: 100%;
-      background: #111;
-      border-radius: 2px;
-      overflow: hidden;
-      cursor: pointer;
-      border: 1px solid var(--border);
-    }
-
-    .featured-cover img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-
-    .featured-cover:hover img {
-      transform: scale(1.03);
-    }
-
-    .featured-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .featured-tag {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .featured-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-    }
-
-    .featured-desc {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      max-width: 600px;
-    }
-
-    .featured-meta-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      padding: 1rem 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      margin: 0.5rem 0;
-    }
-
-    .featured-meta-grid span {
-      display: block;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .featured-meta-grid strong {
-      font-size: 0.85rem;
-      color: var(--text);
-    }
-
-    .featured-btns {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 860px) {
-      .featured-release-card {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1.5rem;
-      }
-      .featured-meta-grid {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-      }
-    }
   </style>
 </head>
 <body>
@@ -919,13 +908,13 @@
   <header>
     <div class="nav-container">
       <a href="#home" class="brand">
-        <img src="assets/rauschwerk-logo.png" alt="rauschwerk logo">
-        <span>rausch<b>werk</b></span>
+        <img src="assets/rauschwerk-logo.svg" alt="rauschwerk logo" onerror="this.src='assets/rauschwerk-logo.png'">
       </a>
       <ul class="nav-links">
         <li><a href="#latest" style="color: var(--accent);">Neuestes Release</a></li>
         <li><a href="#releases">Alle Releases</a></li>
         <li><a href="#streams">Streams</a></li>
+        <li><a href="https://amuse.cello.so/COK3xOQt0bA" target="_blank" rel="noopener" style="color: #ffaa00; font-weight: 600;">Amuse ↗</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="motion-visuals.html">Motion Visuals ↗</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -935,15 +924,15 @@
 
   <!-- Hero Section -->
   <section class="hero" id="home">
-    <div class="hero-meta">Peak Time & Minimal Techno</div>
+    <div class="hero-meta">Peak Time &bull; Minimal &bull; Experimental Industrial Techno</div>
     <h1>rausch<span>werk</span></h1>
     <p class="hero-lead">
-      Reduzierte, hypnotische Grooves, treibende Basslines und analoge Sättigung. 
-      Techno im ausufernden Club-Arrangement zwischen 6 und 10 Minuten.
+      Hypnotische Minimal-Grooves, treibende Peak-Time-Engines und rohe, experimentelle Industrial-Klangstrukturen im ausufernden Club-Arrangement zwischen 6 und 10 Minuten.
     </p>
     <div class="hero-actions">
       <a href="#latest" class="btn btn-primary">&#9660; Neuestes Release</a>
       <a href="https://open.spotify.com/intl-de/artist/2xgmwJ3EYSVsPFthOfCAIK" target="_blank" rel="noopener" class="btn btn-outline">Spotify ↗</a>
+      <a href="https://amuse.cello.so/COK3xOQt0bA" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: var(--accent); color: var(--accent);">Amuse (Distributor) ↗</a>
     </div>
   </section>
 
@@ -991,10 +980,10 @@
 
     <div class="filter-bar">
       <button class="filter-btn active" data-filter="all">Alle</button>
-      <button class="filter-btn" data-filter="peak">Peak Time</button>
-      <button class="filter-btn" data-filter="minimal">High-Tech Minimal</button>
-      <button class="filter-btn" data-filter="industrial">Industrial</button>
-      <button class="filter-btn" data-filter="melodic">Melodic / Ambient</button>
+      <button class="filter-btn" data-filter="peak">Peak Time Techno</button>
+      <button class="filter-btn" data-filter="minimal">Minimal Techno</button>
+      <button class="filter-btn" data-filter="industrial">Experimental Industrial</button>
+      <button class="filter-btn" data-filter="melodic">Melodic & Ambient</button>
     </div>
 
     <div class="releases-grid" id="releases-container"></div>
@@ -1060,7 +1049,7 @@
         </h3>
         <p><strong>RAUSCHWERK ist ein Techno-Projekt aus Deutschland, das eigene musikalische Ideen mit KI-gestützten Werkzeugen verbindet.</strong></p>
         <p>Musik, Cover und bewegte Visuals entstehen auf Basis eigens entwickelter Prompts. So greifen Klang und Bild ineinander und formen eine gemeinsame künstlerische Welt. KI ist dabei kreatives Werkzeug und ein offen gezeigter Teil des Entstehungsprozesses.</p>
-        <p>Der Sound verbindet Minimal Techno mit Peak Time Techno. Reduzierte, hypnotische Grooves treffen auf dunkle, industrielle Klangwelten, melodische Flächen und treibende Peak-Time-Energie.</p>
+        <p>Der Sound spannt den Bogen zwischen <strong>Peak Time Techno</strong>, <strong>Minimal Techno</strong> und <strong>Experimental Industrial Techno</strong>: Reduzierte, hypnotische Basslines treffen auf raue metallische Texturen, analoge Sättigung und treibenden Club-Druck.</p>
         <p>Zu den aktuellen Singles gehören <strong>Eyes in the Dark</strong> (136 BPM), <strong>Zero Hour</strong> (136 BPM), <strong>Full Tilt</strong> (138 BPM) und <strong>Deepest Motion</strong> (140 BPM). Alle vier Releases sind auf Spotify verfügbar.</p>
 
         <div class="specs-row" style="margin-top: 2rem;">
@@ -1113,11 +1102,7 @@
         
         <div class="direct-link">
           <span>E-Mail</span>
-          <a href="mailto:contact@rauschwerkmusik.de">contact@rauschwerkmusik.de</a>
-        </div>
-        <div class="direct-link">
-          <span>Promos</span>
-          <a href="mailto:promo@rauschwerkmusik.de">promo@rauschwerkmusik.de</a>
+          <a href="mailto:rauschwerkmusik@gmail.de">rauschwerkmusik@gmail.de</a>
         </div>
         <div class="direct-link">
           <span>Spotify</span>
@@ -1191,7 +1176,10 @@
 
   <!-- Footer -->
   <footer>
-    <div>&copy; 2026 rauschwerk.</div>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <img src="assets/rauschwerk-logo.png" alt="rauschwerk" style="height: 24px; width: auto;" onerror="this.src='assets/rauschwerk-logo.svg'">
+      <span>&copy; 2026 rauschwerk.</span>
+    </div>
     <div class="footer-links">
       <a href="https://open.spotify.com/intl-de/artist/2xgmwJ3EYSVsPFthOfCAIK" target="_blank" rel="noopener">Spotify</a>
       <a href="https://music.apple.com/search?term=rauschwerk" target="_blank" rel="noopener">Apple Music</a>
@@ -1219,9 +1207,9 @@
       { id: 0, title: "Full Tilt", category: "peak", genre: "Peak Time", cover: "assets/releases/Full Tilt-3000x3000.jpg", bpm: 133 },
       { id: 1, title: "Mechanical", category: "minimal", genre: "Minimal Techno", cover: "assets/releases/Mechanical-3000x3000.jpg", bpm: 130 },
       { id: 2, title: "Eyes in the Dark", category: "peak", genre: "Peak Time", cover: "assets/releases/Eyes in the Dark-3000x3000.jpg", bpm: 136 },
-      { id: 3, title: "Kernschmelze", category: "industrial", genre: "Industrial", cover: "assets/releases/Kernschmelze.jpg", bpm: 135 },
+      { id: 3, title: "Kernschmelze", category: "industrial", genre: "Experimental Industrial", cover: "assets/releases/Kernschmelze.jpg", bpm: 135 },
       { id: 4, title: "Hammer", category: "peak", genre: "Peak Time", cover: "assets/releases/Hammer.jpg", bpm: 132 },
-      { id: 5, title: "Bunkerluft", category: "industrial", genre: "Industrial", cover: "assets/releases/Bunkerluft.jpg", bpm: 134 },
+      { id: 5, title: "Bunkerluft", category: "industrial", genre: "Experimental Industrial", cover: "assets/releases/Bunkerluft.jpg", bpm: 134 },
       { id: 6, title: "Hypnotica", category: "minimal", genre: "High-Tech Minimal", cover: "assets/releases/Hypnotica.jpg", bpm: 129 },
       { id: 7, title: "Impuls", category: "peak", genre: "Peak Time", cover: "assets/releases/Impuls.jpg", bpm: 132 },
       { id: 8, title: "Loop Tension", category: "minimal", genre: "Minimal", cover: "assets/releases/Loop Tension.jpg", bpm: 131 },
@@ -1234,7 +1222,7 @@
       { id: 15, title: "Paradoxon", category: "peak", genre: "Peak Time", cover: "assets/releases/Paradoxon.jpg", bpm: 132 },
       { id: 16, title: "Takt 5", category: "minimal", genre: "High-Tech Minimal", cover: "assets/releases/Takt 5.jpg", bpm: 131 },
       { id: 17, title: "Wolkenmeer", category: "melodic", genre: "Melodic", cover: "assets/releases/Wolkenmeer.jpg", bpm: 128 },
-      { id: 18, title: "Zeitgefühl", category: "industrial", genre: "Dark Techno", cover: "assets/releases/Zeitgef hl.jpg", bpm: 134 }
+      { id: 18, title: "Zeitgefühl", category: "industrial", genre: "Experimental Industrial", cover: "assets/releases/zeitgefuehl.jpg", bpm: 134 }
     ];
 
     let currentTrack = 0;
@@ -1478,7 +1466,7 @@
         <h3>Impressum</h3>
         <p><strong>Angaben gemäß § 5 TMG:</strong></p>
         <p>rauschwerk Musikproduktion<br>
-        E-Mail: contact@rauschwerkmusik.de<br>
+        E-Mail: rauschwerkmusik@gmail.de<br>
         Web: https://www.rauschwerkmusik.de</p>
         <p><strong>Verantwortlich für den Inhalt:</strong><br>
         rauschwerk Projekt-Team</p>
