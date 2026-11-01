@@ -83,10 +83,13 @@
     }
 
     .brand img {
-      height: 32px;
-      width: auto;
+      height: 36px;
+      width: 36px;
+      border-radius: 50%;
+      object-fit: cover;
       display: block;
-      filter: drop-shadow(0 0 10px rgba(255, 85, 0, 0.25));
+      border: 1px solid var(--accent);
+      filter: drop-shadow(0 0 10px rgba(255, 85, 0, 0.35));
     }
 
     .nav-links {
@@ -906,7 +909,7 @@
   <header>
     <div class="nav-container">
       <a href="#home" class="brand">
-        <img src="assets/rauschwerk-logo.svg" alt="rauschwerk logo" onerror="this.src='assets/rauschwerk-logo.png'">
+        <img src="assets/rauschwerk-logo-round.jpg" alt="rauschwerk logo">
       </a>
       <ul class="nav-links">
         <li><a href="#latest" style="color: var(--accent);">Neuestes Release</a></li>
@@ -1164,7 +1167,7 @@
     </div>
   </section>
 
-  <!-- Sticky Bottom Spotify Quick-Bar -->
+  <!-- Sticky Spotify Bar -->
   <div class="player-bar">
     <div class="player-track">
       <img src="assets/releases/Eyes in the Dark-3000x3000.jpg" alt="Cover" class="player-thumb">
@@ -1187,8 +1190,8 @@
   <!-- Footer -->
   <footer>
     <div style="display: flex; align-items: center; gap: 1rem;">
-      <img src="assets/rauschwerk-logo.png" alt="rauschwerk" style="height: 24px; width: auto;" onerror="this.src='assets/rauschwerk-logo.svg'">
-      <span>&copy; 2026 rauschwerk.</span>
+      <img src="assets/rauschwerk-logo-round.jpg" alt="rauschwerk" style="height: 28px; width: 28px; border-radius: 50%; object-fit: cover;">
+      <span>&copy; 2026 rauschwerk. EST. 2025.</span>
     </div>
     <div class="footer-links">
       <a href="https://open.spotify.com/intl-de/artist/2xgmwJ3EYSVsPFthOfCAIK" target="_blank" rel="noopener">Spotify</a>
