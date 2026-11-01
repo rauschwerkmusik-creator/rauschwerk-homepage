@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rauschwerk | Peak Time, Minimal & Experimental Industrial Techno</title>
+  <meta name="description" content="Offizielle Website von rauschwerk – Peak Time Techno, Minimal Techno, Experimental Industrial Techno & Extended Club Mixes.">
+  <link rel="icon" type="image/svg+xml" href="assets/rauschwerk-logo-round.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-surface: #0a0a0a;
+      --border: #1a1a1a;
+      --border-focus: #ff5500;
+      --accent: #ff5500;
+      --accent-dim: rgba(255, 85, 0, 0.12);
+      --spotify: #1DB954;
+      --spotify-dim: rgba(29, 185, 84, 0.15);
+      --text: #ededed;
+      --text-muted: #737373;
+      --text-dim: #404040;
+      --transition: all 0.2s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      padding-bottom: 80px;
+    }
+
+    /* Custom Cyber Techno Cursors (Schwarz & Neon-Orange) */
+    html, body {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpolygon points='2,2 2,20 7,15 11,23 14,21 10,13 17,13' fill='%23050505' stroke='%23ff5500' stroke-width='1.8' stroke-linejoin='round'/%3E%3C/svg%3E"), auto;
+    }
+
+    a, button, [role='button'], input, select, textarea, .release-card, .stream-card, .featured-cover {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ff5500'/%3E%3Ccircle cx='12' cy='12' r='8' fill='none' stroke='%23050505' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='9.5' fill='none' stroke='%23ff5500' stroke-width='1.5'/%3E%3C/svg%3E") 12 12, pointer !important;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(5, 5, 5, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand img {
+      height: 32px;
+      width: auto;
+      display: block;
+      filter: drop-shadow(0 0 10px rgba(255, 85, 0, 0.25));
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+      list-style: none;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 8rem 1.5rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-meta::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-lead {
+      max-width: 580px;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: #ff6a1a;
+      border-color: #ff6a1a;
+    }
+
+    .btn-spotify {
+      background: var(--spotify);
+      color: #000;
+      border: 1px solid var(--spotify);
+    }
+
+    .btn-spotify:hover {
+      background: #22c75e;
+      border-color: #22c75e;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Container */
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Spotify Web Player Container */
+    .spotify-embed-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: var(--transition);
+    }
+
+    .spotify-embed-card:hover {
+      border-color: var(--spotify);
+    }
+
+    .spotify-embed-card iframe {
+      display: block;
+      width: 100%;
+      height: 380px;
+      border: none;
+    }
+
+    /* Filter Tabs */
+    .filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.4rem 0.9rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 2px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover {
+      border-color: #404040;
+      color: var(--text);
+    }
+
+    .filter-btn.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    /* Release Grid */
+    .releases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .release-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .release-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .card-thumb {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      background: #111;
+      overflow: hidden;
+      display: block;
+    }
+
+    .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(15%);
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .release-card:hover .card-thumb img {
+      transform: scale(1.04);
+      filter: grayscale(0%);
+    }
+
+    .card-play-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .release-card:hover .card-play-overlay {
+      opacity: 1;
+    }
+
+    .play-btn-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--spotify);
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      box-shadow: 0 4px 16px rgba(29, 185, 84, 0.45);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .release-card:hover .play-btn-circle {
+      transform: scale(1.08);
+      background: #22c75e;
+    }
+
+    .play-btn-circle svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+      margin-left: 2px;
+    }
+
+    .card-info {
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 0.35rem;
+    }
+
+    .card-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      padding-top: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    .card-spotify-link {
+      color: var(--spotify);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: color 0.2s ease;
+    }
+
+    .card-spotify-link:hover {
+      color: #fff;
+    }
+
+    /* Streams */
+    .stream-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .stream-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .stream-card:hover {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+      transform: translateY(-2px);
+    }
+
+    .stream-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .stream-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .stream-arrow {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      transition: var(--transition);
+    }
+
+    .stream-card:hover .stream-arrow {
+      color: var(--accent);
+      transform: translate(2px, -2px);
+    }
+
+    /* Featured Release Minimal */
+    .featured-release-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 2.5rem;
+      padding: 2rem;
+      align-items: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-release-card:hover {
+      border-color: var(--accent);
+    }
+
+    .featured-cover {
+      position: relative;
+      aspect-ratio: 1;
+      width: 100%;
+      background: #111;
+      border-radius: 2px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+    .featured-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .featured-cover:hover img {
+      transform: scale(1.03);
+    }
+
+    .featured-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .featured-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .featured-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .featured-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 600px;
+    }
+
+    .featured-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding: 1rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 0.5rem 0;
+    }
+
+    .featured-meta-grid span {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .featured-meta-grid strong {
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    .featured-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 860px) {
+      .featured-release-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+      .featured-meta-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+    }
+
+    /* About Minimal */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-text p strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .specs-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .spec-item {
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 4px;
+    }
+
+    .spec-item .num {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .spec-item .label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .about-img {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .about-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: grayscale(20%);
+    }
+
+    /* Minimal Visualizer */
+    .visualizer-container {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: #000;
+      aspect-ratio: 21 / 9;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    #visualizer-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Contact Form */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+    }
+
+    .contact-details p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .direct-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .direct-link span {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      width: 90px;
+    }
+
+    .direct-link a {
+      color: var(--text);
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .direct-link a:hover {
+      color: var(--accent);
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-control {
+      width: 100%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.75rem;
+      font-size: 0.85rem;
+      font-family: inherit;
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    textarea.form-control {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    /* Sticky Bottom Spotify Quick-Bar */
+    .player-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(8, 8, 8, 0.95);
+      border-top: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      padding: 0.65rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .player-track {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      min-width: 220px;
+    }
+
+    .player-thumb {
+      width: 42px;
+      height: 42px;
+      border-radius: 3px;
+      background: #111;
+      object-fit: cover;
+      border: 1px solid var(--border);
+    }
+
+    .player-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+    }
+
+    .player-genre {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .player-actions-right {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* Footer */
+    footer {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #0a0a0a;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      width: 100%;
+      max-width: 650px;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+
+    .modal-box h3 {
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .modal-box p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      margin-bottom: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .about-layout, .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .player-track div {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#home" class="brand">
+        <img src="assets/rauschwerk-logo.svg" alt="rauschwerk logo" onerror="this.src='assets/rauschwerk-logo.png'">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#latest" style="color: var(--accent);">Neuestes Release</a></li>
+        <li><a href="#player" style="color: var(--spotify); font-weight: 600;">Webplayer ♫</a></li>
+        <li><a href="#releases">Alle Releases</a></li>
+        <li><a href="#streams">Streams</a></li>
+        <li><a href="https://amuse.cello.so/COK3xOQt0bA" target="_blank" rel="noopener" style="color: #ffaa00; font-weight: 600;">Amuse ↗</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="motion-visuals.html">Motion Visuals ↗</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-meta">Peak Time &bull; Minimal &bull; Experimental Industrial Techno</div>
+    <h1>rausch<span>werk</span></h1>
+    <p class="hero-lead">
+      Hypnotische Minimal-Grooves, treibende Peak-Time-Engines und rohe, experimentelle Industrial-Klangstrukturen im ausufernden Club-Arrangement zwischen 6 und 10 Minuten.
+    </p>
+    <div class="hero-actions">
+      <a href="#player" class="btn btn-spotify">&#9654; Spotify Webplayer</a>
+      <a href="#latest" class="btn btn-primary">&#9660; Neuestes Release</a>
+      <a href="https://amuse.cello.so/COK3xOQt0bA" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: var(--accent); color: var(--accent);">Amuse (Distributor) ↗</a>
+    </div>
+  </section>
+
+  <!-- Latest Release Highlight (Immer ganz oben) -->
+  <section class="section-wrap" id="latest" style="padding-top: 3.5rem;">
+    <div class="section-header">
+      <h2>01 / Neuestes Release</h2>
+      <span>Aktuelle Veröffentlichung</span>
+    </div>
+
+    <div class="featured-release-card">
+      <a href="https://open.spotify.com/search/rauschwerk%20Eyes%20in%20the%20Dark" target="_blank" rel="noopener" class="featured-cover" title="Eyes in the Dark auf Spotify öffnen">
+        <img src="assets/releases/Eyes in the Dark-3000x3000.jpg" alt="Eyes in the Dark Cover">
+        <div class="card-play-overlay">
+          <div class="play-btn-circle" style="width: 58px; height: 58px;">
+            <svg viewBox="0 0 24 24" style="width: 26px; height: 26px;"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </a>
+      <div class="featured-info">
+        <div class="featured-tag">Neuester Track &bull; 136 BPM</div>
+        <h3 class="featured-title">Eyes in the Dark</h3>
+        <p class="featured-desc">
+          Hypnotischer Peak Time Techno mit treibender Bassline und düsteren, atmosphärischen Synthesizer-Flächen. Der neueste Release von rauschwerk.
+        </p>
+        <div class="featured-meta-grid">
+          <div><span>Release</span><strong>Eyes in the Dark</strong></div>
+          <div><span>Tempo</span><strong>136 BPM</strong></div>
+          <div><span>Format</span><strong>Original Club Mix</strong></div>
+        </div>
+        <div class="featured-btns">
+          <a href="https://open.spotify.com/search/rauschwerk%20Eyes%20in%20the%20Dark" target="_blank" rel="noopener" class="btn btn-spotify">
+            &#9654; Auf Spotify öffnen ↗
+          </a>
+          <a href="#player" class="btn btn-outline">
+            Im Webplayer hören &#9660;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offizieller Spotify Web Player Embed -->
+  <section class="section-wrap" id="player">
+    <div class="section-header">
+      <h2>02 / Spotify Web Player</h2>
+      <span>Direkter Stream &bull; rauschwerk Diskografie</span>
+    </div>
+
+    <div class="spotify-embed-card">
+      <iframe 
+        src="https://open.spotify.com/embed/artist/2xgmwJ3EYSVsPFthOfCAIK?utm_source=generator&theme=0" 
+        width="100%" 
+        height="380" 
+        frameBorder="0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Releases -->
+  <section class="section-wrap" id="releases">
+    <div class="section-header">
+      <h2>Releases</h2>
+      <span>Katalog &bull; 19 Tracks</span>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">Alle</button>
+      <button class="filter-btn" data-filter="peak">Peak Time Techno</button>
+      <button class="filter-btn" data-filter="minimal">Minimal Techno</button>
+      <button class="filter-btn" data-filter="industrial">Experimental Industrial</button>
+      <button class="filter-btn" data-filter="melodic">Melodic & Ambient</button>
+    </div>
+
+    <div class="releases-grid" id="releases-container"></div>
+  </section>
+
+  <!-- Streams & Platforms -->
+  <section class="section-wrap" id="streams">
+    <div class="section-header">
+      <h2>Streams & Plattformen</h2>
+      <span>Alle offiziellen Kanäle</span>
+    </div>
+
+    <div class="stream-grid">
+      <a href="https://open.spotify.com/intl-de/artist/2xgmwJ3EYSVsPFthOfCAIK" target="_blank" rel="noopener" class="stream-card" style="border-color: rgba(29, 185, 84, 0.4);">
+        <div class="stream-name" style="color: var(--spotify);">Spotify</div>
+        <div class="stream-sub">Artist Profile & Diskografie</div>
+        <div class="stream-arrow" style="color: var(--spotify);">↗</div>
+      </a>
+      <a href="https://music.apple.com/search?term=rauschwerk" target="_blank" rel="noopener" class="stream-card">
+        <div class="stream-name">Apple Music</div>
+        <div class="stream-sub">Lossless & Spatial Audio</div>
+        <div class="stream-arrow">↗</div>
+      </a>
+      <a href="http://www.youtube.com/@Rauschwerkmusic" target="_blank" rel="noopener" class="stream-card">
+        <div class="stream-name">YouTube</div>
+        <div class="stream-sub">Clips & Motion Visuals</div>
+        <div class="stream-arrow">↗</div>
+      </a>
+      <a href="https://audiomack.com/rauschwerkmusik" target="_blank" rel="noopener" class="stream-card">
+        <div class="stream-name">Audiomack</div>
+        <div class="stream-sub">Direct Streaming & Sets</div>
+        <div class="stream-arrow">↗</div>
+      </a>
+      <a href="https://soundcloud.com/rauschwerk" target="_blank" rel="noopener" class="stream-card">
+        <div class="stream-name">SoundCloud</div>
+        <div class="stream-sub">Edits & Previews</div>
+        <div class="stream-arrow">↗</div>
+      </a>
+      <a href="https://www.tiktok.com/@rauschwerk" target="_blank" rel="noopener" class="stream-card">
+        <div class="stream-name">TikTok</div>
+        <div class="stream-sub">Teaser & Snippets</div>
+        <div class="stream-arrow">↗</div>
+      </a>
+      <a href="https://amuse.cello.so/COK3xOQt0bA" target="_blank" rel="noopener" class="stream-card" style="border-color: rgba(255, 85, 0, 0.4);">
+        <div class="stream-name" style="color: var(--accent);">Amuse</div>
+        <div class="stream-sub">Vertrieb & Official Catalog</div>
+        <div class="stream-arrow" style="color: var(--accent);">↗</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section-wrap" id="about">
+    <div class="section-header">
+      <h2>Über das Projekt</h2>
+      <span>Sound &amp; Konzept</span>
+    </div>
+
+    <div class="about-layout">
+      <div class="about-text">
+        <h3 style="font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: -0.02em;">
+          Sound mit<br><span style="color: var(--accent);">Spannung.</span>
+        </h3>
+        <p><strong>RAUSCHWERK ist ein Techno-Projekt aus Deutschland, das eigene musikalische Ideen mit KI-gestützten Werkzeugen verbindet.</strong></p>
+        <p>Musik, Cover und bewegte Visuals entstehen auf Basis eigens entwickelter Prompts. So greifen Klang und Bild ineinander und formen eine gemeinsame künstlerische Welt. KI ist dabei kreatives Werkzeug und ein offen gezeigter Teil des Entstehungsprozesses.</p>
+        <p>Der Sound spannt den Bogen zwischen <strong>Peak Time Techno</strong>, <strong>Minimal Techno</strong> und <strong>Experimental Industrial Techno</strong>: Reduzierte, hypnotische Basslines treffen auf raue metallische Texturen, analoge Sättigung und treibenden Club-Druck.</p>
+        <p>Zu den aktuellen Singles gehören <strong>Eyes in the Dark</strong> (136 BPM), <strong>Zero Hour</strong> (136 BPM), <strong>Full Tilt</strong> (138 BPM) und <strong>Deepest Motion</strong> (140 BPM). Alle Releases sind direkt auf Spotify verfügbar.</p>
+
+        <div class="specs-row" style="margin-top: 2rem;">
+          <div class="spec-item">
+            <div class="num">136–140</div>
+            <div class="label">BPM Core Range</div>
+          </div>
+          <div class="spec-item">
+            <div class="num">4</div>
+            <div class="label">Fokus-Singles</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-img">
+        <img src="assets/rauschwerk-banner.jpg" alt="RAUSCHWERK Studio Banner" onerror="this.src='assets/releases/Eyes in the Dark-3000x3000.jpg'">
+      </div>
+    </div>
+  </section>
+
+  <!-- Visuals -->
+  <section class="section-wrap" id="visuals">
+    <div class="section-header">
+      <h2>Motion Visuals</h2>
+      <span>Frequenz-Reaktiv</span>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+      <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 650px;">
+        Echtzeit-Frequenzmodulatoren für Club-Screens, Live-Stream-Visuals und Promo-Clips.
+      </p>
+      <a href="motion-visuals.html" class="btn btn-outline" style="border-color: var(--accent); color: var(--accent);">Motion Visuals öffnen ↗</a>
+    </div>
+
+    <div class="visualizer-container">
+      <canvas id="visualizer-canvas"></canvas>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section-wrap" id="contact">
+    <div class="section-header">
+      <h2>Connect & Feedback</h2>
+      <span>Kontakt & Collabs</span>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-details">
+        <p>Für Track-Feedback, Promo-Pool-Einreichungen, Collabs oder Sound-Design-Austausch direkt kontaktieren.</p>
+        
+        <div class="direct-link">
+          <span>E-Mail</span>
+          <a href="mailto:rauschwerkmusik@gmail.de">rauschwerkmusik@gmail.de</a>
+        </div>
+        <div class="direct-link">
+          <span>Spotify</span>
+          <a href="https://open.spotify.com/intl-de/artist/2xgmwJ3EYSVsPFthOfCAIK" target="_blank" rel="noopener">Künstlerprofil ↗</a>
+        </div>
+        <div class="direct-link">
+          <span>YouTube</span>
+          <a href="http://www.youtube.com/@Rauschwerkmusic" target="_blank" rel="noopener">@Rauschwerkmusic ↗</a>
+        </div>
+      </div>
+
+      <form onsubmit="handleForm(event)">
+        <div class="form-group">
+          <label>Name / Producer / DJ</label>
+          <input type="text" class="form-control" placeholder="Dein Name" required>
+        </div>
+        <div class="form-group">
+          <label>E-Mail</label>
+          <input type="email" class="form-control" placeholder="deine@adresse.de" required>
+        </div>
+        <div class="form-group">
+          <label>Betreff</label>
+          <select class="form-control">
+            <option>Track Feedback & Promos</option>
+            <option>Kollaboration / Remix</option>
+            <option>Sound-Design & Tech-Talk</option>
+            <option>Sonstiges</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Nachricht</label>
+          <textarea class="form-control" placeholder="Deine Nachricht..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Nachricht senden</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Sticky Bottom Spotify Quick-Bar -->
+  <div class="player-bar">
+    <div class="player-track">
+      <img src="assets/releases/Eyes in the Dark-3000x3000.jpg" alt="Cover" class="player-thumb">
+      <div>
+        <div class="player-title">rauschwerk Releases</div>
+        <div class="player-genre">Spotify Stream & Player</div>
+      </div>
+    </div>
+
+    <div class="player-actions-right">
+      <a href="#player" class="btn btn-outline" style="padding: 0.45rem 0.9rem; font-size: 0.75rem; border-color: var(--accent); color: var(--accent);">
+        &#9650; Zum Webplayer
+      </a>
+      <a href="https://open.spotify.com/intl-de/artist/2xgmwJ3EYSVsPFthOfCAIK" target="_blank" rel="noopener" class="btn btn-spotify" style="padding: 0.45rem 1rem; font-size: 0.75rem;">
+        Spotify Artist App ↗
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <img src="assets/rauschwerk-logo.png" alt="rauschwerk" style="height: 24px; width: auto;" onerror="this.src='assets/rauschwerk-logo.svg'">
+      <span>&copy; 2026 rauschwerk.</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://open.spotify.com/intl-de/artist/2xgmwJ3EYSVsPFthOfCAIK" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://music.apple.com/search?term=rauschwerk" target="_blank" rel="noopener">Apple Music</a>
+      <a href="http://www.youtube.com/@Rauschwerkmusic" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://audiomack.com/rauschwerkmusik" target="_blank" rel="noopener">Audiomack</a>
+      <a href="https://soundcloud.com/rauschwerk" target="_blank" rel="noopener">SoundCloud</a>
+      <a href="https://www.tiktok.com/@rauschwerk" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://amuse.cello.so/COK3xOQt0bA" target="_blank" rel="noopener">Amuse</a>
+      <a href="motion-visuals.html">Visuals</a>
+      <a href="javascript:void(0)" onclick="openModal('impressum')">Impressum</a>
+      <a href="javascript:void(0)" onclick="openModal('datenschutz')">Datenschutz</a>
+    </div>
+  </footer>
+
+  <!-- Legal Modal -->
+  <div class="modal-backdrop" id="modal-backdrop" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script>
+    const tracklist = [
+      { id: 0, title: "Full Tilt", category: "peak", genre: "Peak Time", cover: "assets/releases/Full Tilt-3000x3000.jpg", bpm: 133 },
+      { id: 1, title: "Mechanical", category: "minimal", genre: "Minimal Techno", cover: "assets/releases/Mechanical-3000x3000.jpg", bpm: 130 },
+      { id: 2, title: "Eyes in the Dark", category: "peak", genre: "Peak Time", cover: "assets/releases/Eyes in the Dark-3000x3000.jpg", bpm: 136 },
+      { id: 3, title: "Kernschmelze", category: "industrial", genre: "Experimental Industrial", cover: "assets/releases/Kernschmelze.jpg", bpm: 135 },
+      { id: 4, title: "Hammer", category: "peak", genre: "Peak Time", cover: "assets/releases/Hammer.jpg", bpm: 132 },
+      { id: 5, title: "Bunkerluft", category: "industrial", genre: "Experimental Industrial", cover: "assets/releases/Bunkerluft.jpg", bpm: 134 },
+      { id: 6, title: "Hypnotica", category: "minimal", genre: "High-Tech Minimal", cover: "assets/releases/Hypnotica.jpg", bpm: 129 },
+      { id: 7, title: "Impuls", category: "peak", genre: "Peak Time", cover: "assets/releases/Impuls.jpg", bpm: 132 },
+      { id: 8, title: "Loop Tension", category: "minimal", genre: "Minimal", cover: "assets/releases/Loop Tension.jpg", bpm: 131 },
+      { id: 9, title: "Lost in Motion", category: "melodic", genre: "Melodic Techno", cover: "assets/releases/Lost_in_Motion.jpg", bpm: 128 },
+      { id: 10, title: "Do not leave the building", category: "peak", genre: "Peak Time", cover: "assets/releases/Do not leave the building.jpg", bpm: 133 },
+      { id: 11, title: "Bit by Bit", category: "minimal", genre: "High-Tech Minimal", cover: "assets/releases/Bit by Bit.jpg", bpm: 130 },
+      { id: 12, title: "Cathedral Nightlight", category: "melodic", genre: "Atmospheric", cover: "assets/releases/Cathetral Nightlight.jpg", bpm: 128 },
+      { id: 13, title: "Golden Sunset", category: "melodic", genre: "Melodic Minimal", cover: "assets/releases/Golden_Sunset.jpg", bpm: 127 },
+      { id: 14, title: "Chilloutmodus", category: "melodic", genre: "Downbeat", cover: "assets/releases/Chilloutmodus.jpg", bpm: 118 },
+      { id: 15, title: "Paradoxon", category: "peak", genre: "Peak Time", cover: "assets/releases/Paradoxon.jpg", bpm: 132 },
+      { id: 16, title: "Takt 5", category: "minimal", genre: "High-Tech Minimal", cover: "assets/releases/Takt 5.jpg", bpm: 131 },
+      { id: 17, title: "Wolkenmeer", category: "melodic", genre: "Melodic", cover: "assets/releases/Wolkenmeer.jpg", bpm: 128 },
+      { id: 18, title: "Zeitgefühl", category: "industrial", genre: "Experimental Industrial", cover: "assets/releases/zeitgefuehl.jpg", bpm: 134 }
+    ];
+
+    const grid = document.getElementById('releases-container');
+
+    function renderGrid(filter = 'all') {
+      grid.innerHTML = '';
+      const list = filter === 'all' ? tracklist : tracklist.filter(t => t.category === filter);
+
+      list.forEach(t => {
+        const spotifyUrl = `https://open.spotify.com/search/rauschwerk%20${encodeURIComponent(t.title)}`;
+        const card = document.createElement('div');
+        card.className = 'release-card';
+        card.innerHTML = `
+          <a href="${spotifyUrl}" target="_blank" rel="noopener" class="card-thumb" title="${t.title} auf Spotify anhören">
+            <img src="${t.cover}" alt="${t.title}" loading="lazy" onerror="this.src='assets/rauschwerk-banner.jpg'">
+            <div class="card-play-overlay">
+              <div class="play-btn-circle">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </a>
+          <div class="card-info">
+            <span class="card-tag">${t.genre}</span>
+            <div class="card-title">${t.title}</div>
+            <div class="card-footer">
+              <span>${t.bpm} BPM</span>
+              <a href="${spotifyUrl}" target="_blank" rel="noopener" class="card-spotify-link">Auf Spotify ↗</a>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderGrid(btn.getAttribute('data-filter'));
+      };
+    });
+
+    // Visualizer Canvas Animation
+    const canvas = document.getElementById('visualizer-canvas');
+    const ctx = canvas.getContext('2d');
+    let vStep = 0;
+
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = canvas.parentElement.clientHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function renderVisualizer() {
+      requestAnimationFrame(renderVisualizer);
+      ctx.fillStyle = '#000000';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      const midY = canvas.height / 2;
+      const bars = 64;
+      const barW = canvas.width / bars;
+      vStep += 0.03;
+
+      for (let i = 0; i < bars; i++) {
+        const amp = (Math.sin(i * 0.2 + vStep) * 0.5 + Math.cos(i * 0.12 - vStep * 1.2) * 0.5) * 0.5 + 0.3;
+        const h = Math.max(4, amp * (canvas.height * 0.45));
+        const x = i * barW;
+        const y = midY - h / 2;
+
+        ctx.fillStyle = (i % 2 === 0) ? '#ff5500' : '#262626';
+        ctx.fillRect(x + 1, y, barW - 2, h);
+      }
+    }
+    renderVisualizer();
+
+    function handleForm(e) {
+      e.preventDefault();
+      alert('Danke für deine Nachricht an rauschwerk.');
+      e.target.reset();
+    }
+
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const modalBody = document.getElementById('modal-body');
+
+    const legal = {
+      impressum: `
+        <h3>Impressum</h3>
+        <p><strong>Angaben gemäß § 5 TMG / DDG:</strong></p>
+        <p>rauschwerk Musikproduktion<br>
+        E-Mail: <a href="mailto:rauschwerkmusik@gmail.de" style="color: var(--accent);">rauschwerkmusik@gmail.de</a><br>
+        Website: <a href="https://www.rauschwerkmusik.de" target="_blank" rel="noopener" style="color: var(--accent);">www.rauschwerkmusik.de</a></p>
+        <p><strong>Vertreten durch / Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</strong><br>
+        rauschwerk Projektleitung</p>
+        <p><strong>Haftung für Inhalte:</strong><br>
+        Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
+        <p><strong>Urheberrecht &amp; Musikrechte:</strong><br>
+        Die durch rauschwerk erstellten Inhalte, Tracks, Kompositionen und Designs auf diesen Seiten unterliegen dem Urheberrecht. Vervielfältigung, Bearbeitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der vorherigen schriftlichen Zustimmung.</p>
+      `,
+      datenschutz: `
+        <h3>Datenschutzerklärung</h3>
+        <p><strong>1. Datenschutz auf einen Blick:</strong><br>
+        Der Schutz deiner persönlichen Daten ist uns ein wichtiges Anliegen. Diese Website verzichtet vollständig auf Tracking-Tools, Drittanbieter-Cookies, Analysedienste (wie Google Analytics) und externe Werbenetzwerke.</p>
+        <p><strong>2. Verantwortliche Stelle:</strong><br>
+        rauschwerk Musikproduktion<br>
+        E-Mail: rauschwerkmusik@gmail.de</p>
+        <p><strong>3. Server-Log-Dateien (Hosting über GitHub Pages):</strong><br>
+        Beim Aufrufen dieser Seite werden durch den Webspace-Provider automatisch Informationen erhoben, die dein Browser übermittelt (u.a. Browsertyp/-version, Betriebssystem, Referrer URL, IP-Adresse, Datum und Uhrzeit der Serveranfrage). Dies dient ausschließlich der technischen Bereitstellung, Betriebssicherheit und Fehleranalyse.</p>
+        <p><strong>4. Kontaktaufnahme per E-Mail:</strong><br>
+        Wenn du uns per E-Mail kontaktierst, werden deine übermittelten Daten einschließlich Kontaktdaten zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne deine Einwilligung weiter.</p>
+        <p><strong>5. Externe Links (Spotify, Apple Music, Amuse, YouTube etc.):</strong><br>
+        Unsere Website verlinkt auf externe Streaming- und Vertriebsplattformen. Wenn du diese Links anklickst, verlässt du unsere Website und unterliegst den Datenschutzbestimmungen der jeweiligen Betreiber.</p>
+        <p><strong>6. Lokale Audio-Synthese:</strong><br>
+        Die Vorschau-Wiedergabe und der Audio-Visualizer laufen clientseitig über die Web Audio API deines Browsers ab. Dabei werden keinerlei Audio- oder Nutzerverhaltensdaten übertragen.</p>
+      `
+    };
+
+    function openModal(t) {
+      modalBody.innerHTML = legal[t] || '';
+      modalBackdrop.classList.add('open');
+    }
+
+    function closeModal() {
+      modalBackdrop.classList.remove('open');
+    }
+
+    function closeModalOnBackdrop(e) {
+      if (e.target === modalBackdrop) closeModal();
+    }
+
+    // Init
+    renderGrid('all');
+  </script>
+</body>
+</html>
