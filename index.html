@@ -241,6 +241,27 @@
       letter-spacing: 0.05em;
     }
 
+    /* Spotify Web Player Container */
+    .spotify-embed-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: var(--transition);
+    }
+
+    .spotify-embed-card:hover {
+      border-color: var(--spotify);
+    }
+
+    .spotify-embed-card iframe {
+      display: block;
+      width: 100%;
+      height: 380px;
+      border: none;
+    }
+
     /* Filter Tabs */
     .filter-bar {
       display: flex;
@@ -338,19 +359,19 @@
       width: 52px;
       height: 52px;
       border-radius: 50%;
-      background: var(--accent);
+      background: var(--spotify);
       color: #000;
       display: flex;
       align-items: center;
       justify-content: center;
       border: none;
-      box-shadow: 0 4px 16px rgba(255, 85, 0, 0.45);
+      box-shadow: 0 4px 16px rgba(29, 185, 84, 0.45);
       transition: transform 0.2s ease, background 0.2s ease;
     }
 
     .release-card:hover .play-btn-circle {
       transform: scale(1.08);
-      background: #ff6a1a;
+      background: #22c75e;
     }
 
     .play-btn-circle svg {
@@ -395,7 +416,7 @@
     }
 
     .card-spotify-link {
-      color: var(--accent);
+      color: var(--spotify);
       font-weight: 600;
       display: inline-flex;
       align-items: center;
@@ -460,7 +481,7 @@
       transform: translate(2px, -2px);
     }
 
-    /* Featured Release */
+    /* Featured Release Minimal */
     .featured-release-card {
       background: var(--bg-surface);
       border: 1px solid var(--border);
@@ -726,7 +747,7 @@
       resize: vertical;
     }
 
-    /* Sticky Spotify Bar */
+    /* Sticky Bottom Spotify Quick-Bar */
     .player-bar {
       position: fixed;
       bottom: 0;
@@ -889,6 +910,7 @@
       </a>
       <ul class="nav-links">
         <li><a href="#latest" style="color: var(--accent);">Neuestes Release</a></li>
+        <li><a href="#player" style="color: var(--spotify); font-weight: 600;">Webplayer ♫</a></li>
         <li><a href="#releases">Alle Releases</a></li>
         <li><a href="#streams">Streams</a></li>
         <li><a href="https://amuse.cello.so/COK3xOQt0bA" target="_blank" rel="noopener" style="color: #ffaa00; font-weight: 600;">Amuse ↗</a></li>
@@ -907,8 +929,8 @@
       Hypnotische Minimal-Grooves, treibende Peak-Time-Engines und rohe, experimentelle Industrial-Klangstrukturen im ausufernden Club-Arrangement zwischen 6 und 10 Minuten.
     </p>
     <div class="hero-actions">
+      <a href="#player" class="btn btn-spotify">&#9654; Spotify Webplayer</a>
       <a href="#latest" class="btn btn-primary">&#9660; Neuestes Release</a>
-      <a href="https://open.spotify.com/intl-de/artist/2xgmwJ3EYSVsPFthOfCAIK" target="_blank" rel="noopener" class="btn btn-spotify">&#9654; Spotify Diskografie ↗</a>
       <a href="https://amuse.cello.so/COK3xOQt0bA" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: var(--accent); color: var(--accent);">Amuse (Distributor) ↗</a>
     </div>
   </section>
@@ -941,14 +963,34 @@
           <div><span>Format</span><strong>Original Club Mix</strong></div>
         </div>
         <div class="featured-btns">
-          <a href="https://open.spotify.com/search/rauschwerk%20Eyes%20in%20the%20Dark" target="_blank" rel="noopener" class="btn btn-primary">
-            &#9654; Direkt auf Spotify anhören ↗
+          <a href="https://open.spotify.com/search/rauschwerk%20Eyes%20in%20the%20Dark" target="_blank" rel="noopener" class="btn btn-spotify">
+            &#9654; Auf Spotify öffnen ↗
           </a>
-          <a href="https://open.spotify.com/intl-de/artist/2xgmwJ3EYSVsPFthOfCAIK" target="_blank" rel="noopener" class="btn btn-outline">
-            Künstlerprofil öffnen ↗
+          <a href="#player" class="btn btn-outline">
+            Im Webplayer hören &#9660;
           </a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Offizieller Spotify Web Player Embed -->
+  <section class="section-wrap" id="player">
+    <div class="section-header">
+      <h2>02 / Spotify Web Player</h2>
+      <span>Direkter Stream &bull; rauschwerk Diskografie</span>
+    </div>
+
+    <div class="spotify-embed-card">
+      <iframe 
+        src="https://open.spotify.com/embed/artist/2xgmwJ3EYSVsPFthOfCAIK?utm_source=generator&theme=0" 
+        width="100%" 
+        height="380" 
+        frameBorder="0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+      </iframe>
     </div>
   </section>
 
@@ -978,10 +1020,10 @@
     </div>
 
     <div class="stream-grid">
-      <a href="https://open.spotify.com/intl-de/artist/2xgmwJ3EYSVsPFthOfCAIK" target="_blank" rel="noopener" class="stream-card">
-        <div class="stream-name">Spotify</div>
+      <a href="https://open.spotify.com/intl-de/artist/2xgmwJ3EYSVsPFthOfCAIK" target="_blank" rel="noopener" class="stream-card" style="border-color: rgba(29, 185, 84, 0.4);">
+        <div class="stream-name" style="color: var(--spotify);">Spotify</div>
         <div class="stream-sub">Artist Profile & Diskografie</div>
-        <div class="stream-arrow">↗</div>
+        <div class="stream-arrow" style="color: var(--spotify);">↗</div>
       </a>
       <a href="https://music.apple.com/search?term=rauschwerk" target="_blank" rel="noopener" class="stream-card">
         <div class="stream-name">Apple Music</div>
@@ -1122,19 +1164,22 @@
     </div>
   </section>
 
-  <!-- Sticky Spotify Bar -->
+  <!-- Sticky Bottom Spotify Quick-Bar -->
   <div class="player-bar">
     <div class="player-track">
       <img src="assets/releases/Eyes in the Dark-3000x3000.jpg" alt="Cover" class="player-thumb">
       <div>
-        <div class="player-title">rauschwerk Katalog</div>
-        <div class="player-genre">Official Spotify Stream</div>
+        <div class="player-title">rauschwerk Releases</div>
+        <div class="player-genre">Spotify Stream & Player</div>
       </div>
     </div>
 
     <div class="player-actions-right">
-      <a href="https://open.spotify.com/intl-de/artist/2xgmwJ3EYSVsPFthOfCAIK" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.5rem 1.1rem; font-size: 0.8rem;">
-        &#9654; Auf Spotify hören ↗
+      <a href="#player" class="btn btn-outline" style="padding: 0.45rem 0.9rem; font-size: 0.75rem; border-color: var(--accent); color: var(--accent);">
+        &#9650; Zum Webplayer
+      </a>
+      <a href="https://open.spotify.com/intl-de/artist/2xgmwJ3EYSVsPFthOfCAIK" target="_blank" rel="noopener" class="btn btn-spotify" style="padding: 0.45rem 1rem; font-size: 0.75rem;">
+        Spotify Artist App ↗
       </a>
     </div>
   </div>
