@@ -909,7 +909,7 @@
   <header>
     <div class="nav-container">
       <a href="#home" class="brand">
-        <img src="assets/rauschwerk-logo-round.jpg" alt="rauschwerk logo">
+        <img src="assets/rauschwerk-logo-round.jpg" alt="rauschwerk logo" onerror="this.src='assets/rauschwerk-logo.png'">
       </a>
       <ul class="nav-links">
         <li><a href="#latest" style="color: var(--accent);">Neuestes Release</a></li>
@@ -1091,7 +1091,7 @@
       </div>
 
       <div class="about-img">
-        <img src="assets/rauschwerk-banner.jpg" alt="RAUSCHWERK Studio Banner" onerror="this.src='assets/releases/Kein Zurück2-1400x1400.jpg'">
+        <img src="assets/releases/rauschwerk-banner.jpg" alt="RAUSCHWERK Studio Banner" onerror="this.src='assets/releases/Kein Zurück2-1400x1400.jpg'">
       </div>
     </div>
   </section>
@@ -1190,7 +1190,7 @@
   <!-- Footer -->
   <footer>
     <div style="display: flex; align-items: center; gap: 1rem;">
-      <img src="assets/rauschwerk-logo-round.jpg" alt="rauschwerk" style="height: 24px; width: auto;">
+      <img src="assets/rauschwerk-logo-round.jpg" alt="rauschwerk" style="height: 24px; width: auto;" onerror="this.src='assets/rauschwerk-logo.svg'">
       <span>&copy; 2026 rauschwerk.</span>
     </div>
     <div class="footer-links">
@@ -1218,7 +1218,7 @@
   <script>
     const tracklist = [
       { id: -2, title: "Kein Zurück", category: "melodic", genre: "Melodic & Peak Time", cover: "assets/releases/Kein Zurück2-1400x1400.jpg", bpm: 135 },
-      { id: -1, title: "Deep Sub Rumble", category: "industrial", genre: "Experimental Industrial", cover: "assets/releases/Deep Sub Rumble-4000x4000.jpg", bpm: 138 },
+      { id: -1, title: "Deep Sub Rumble", category: "industrial", genre: "Experimental Industrial", cover: "assets/releases/Deep Sub Rumble-1400x1400.jpg", bpm: 138 },
       { id: 0, title: "Full Tilt", category: "peak", genre: "Peak Time", cover: "assets/releases/Full Tilt-3000x3000.jpg", bpm: 133 },
       { id: 1, title: "Mechanical", category: "minimal", genre: "Minimal Techno", cover: "assets/releases/Mechanical-3000x3000.jpg", bpm: 130 },
       { id: 2, title: "Eyes in the Dark", category: "peak", genre: "Peak Time", cover: "assets/releases/Eyes in the Dark-3000x3000.jpg", bpm: 136 },
@@ -1252,7 +1252,7 @@
         card.className = 'release-card';
         card.innerHTML = `
           <a href="${spotifyUrl}" target="_blank" rel="noopener" class="card-thumb" title="${t.title} auf Spotify anhören">
-            <img src="${t.cover}" alt="${t.title}" loading="lazy" onerror="this.src='assets/rauschwerk-banner.jpg'">
+            <img src="${t.cover}" alt="${t.title}" loading="lazy" onerror="this.src='assets/releases/rauschwerk-banner.jpg'">
             <div class="card-play-overlay">
               <div class="play-btn-circle">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
